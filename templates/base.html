@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}TechStore{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <nav>
+        <a href="{{ url_for('index') }}">Головна</a> | 
+        <a href="{{ url_for('catalog') }}">Каталог</a> |
+        <a href="{{ url_for('contact') }}">Зворотний зв'язок</a>
+    </nav>
+    <hr>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+    <hr>
+    <footer>
+        <p>&copy; {{ year }} TechStore Flask. Усі права захищено.</p>
+    </footer>
+</body>
+</html>

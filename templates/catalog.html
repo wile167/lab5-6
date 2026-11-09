@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ title }} - TechStore{% endblock %}
+
+{% block content %}
+    <h2>{{ title }}</h2>
+    {% if items %}
+        <ul>
+        {% for item in items %}
+            <li>
+                <strong>{{ item.name.upper() }}</strong> — {{ item.price }} грн 
+                (З ПДВ: {{ item.price * 1.2 }} грн)
+                {% if item.in_stock %} [В наявності] {% else %} [Немає] {% endif %}
+            </li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>Каталог порожній.</p>
+    {% endif %}
+{% endblock %}

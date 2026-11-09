@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}TechStore Django{% endblock %}</title>
+</head>
+<body>
+    <nav>
+        <a href="{% url 'index' %}">Головна</a> | 
+        <a href="{% url 'catalog' %}">Каталог</a> |
+        <a href="{% url 'contact' %}">Зворотний зв'язок</a>
+    </nav>
+    <hr>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+    <hr>
+    <footer>
+        <p>&copy; {{ now|date:"Y" }} TechStore Django. Усі права захищено.</p>
+    </footer>
+</body>
+</html>

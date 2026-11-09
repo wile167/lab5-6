@@ -1,0 +1,8 @@
+{% extends 'shop/base.html' %}
+
+{% block title %}{{ title }} - TechStore{% endblock %}
+
+{% block content %}
+    <h1>Ласкаво просимо до {{ site_name }}</h1>
+    <p>У нашому каталозі наразі доступно <strong>{{ items_count }}</strong> товарів.</p>
+{% endblock %}
